@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.web.hzxy.dao.ContDao">
+    <sql id="base_column">
+        id,
+        title,
+        sub_title As subTitle,
+        content,
+        pic
+    </sql>
+
+    <!--插入内容-->
+    <insert id="insert" parameterType="Content">
+
+        INSERT  INTO content
+        (
+            title,
+            sub_title,
+            content,
+            pic
+        )
+        VALUES
+        (
+        #{title}
+        #{subTitle},
+        #{content},
+        #{pic}
+        )
+    </insert>
+
+</mapper>
